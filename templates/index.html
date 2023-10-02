@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Language Model Text Generation</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body style="background: linear-gradient(to bottom, #22483e, #1b3d34)">
+    <div class="container mt-5">
+      <h1>Language Model Text Generation</h1>
+      <form method="POST" action="/generate" class="mt-3">
+        <div class="form-group">
+          <label for="seed_text">Seed Text:</label>
+          <input type="text" name="seed_text" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Text</button>
+      </form>
+      {% if generated_text %}
+      <div class="mt-3">
+        <h2>Generated Text:</h2>
+        <p>{{ generated_text }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
